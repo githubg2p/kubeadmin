@@ -8,7 +8,7 @@ def mvnCMD = "${mvnHome}/bin/mvn"
     sh "${mvnCMD} clean package"
 }
      stage('Build Docker'){
-     sh 'docker build -t kishanpeddaboina/my-app:${BUILD_NUMBER} .'
+     sh 'docker build -t dockerdrk/my-app:${BUILD_NUMBER} .'
 }
     stage('Push Docker Image'){
     withCredentials([string(credentialsId: 'docker', variable: 'docker')]) {
@@ -33,7 +33,7 @@ def mvnCMD = "${mvnHome}/bin/mvn"
 
    //stage('Runcontainer on dev server'){
 
-  //def dockerRun = 'docker run -p 8080:8080 -d --name my-kishan kishanpeddaboina/my-app:${BUILD_NUMBER}'
+  //def dockerRun = 'docker run -p 8080:8080 -d --name my-kishan dockerdrk/my-app:${BUILD_NUMBER}'
   //sshagent(['ec2']) {
  //sh "ssh -o StrictHostKeyChecking=no ubuntu@65.1.134.199 ${dockerRun}"
 //}
