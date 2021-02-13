@@ -42,7 +42,7 @@ def mvnCMD = "${mvnHome}/bin/mvn"
     stage('Deploy to k8s'){
        sh "chmod +x changeTag.sh"
        sh "./changeTag.sh ${BUILD_NUMBER}"
-        sshagent(['ec2']) {
+        sshagent(['ubuntu']) {
             sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@65.1.134.199:/home/ubuntu/"
             script{
             try{
