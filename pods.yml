@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: my-app
-      image: kishanpeddaboina/my-app:tagVersion
+      image: dockerdrk/my-app:tagVersion
       ports:
         - containerPort: 8080
