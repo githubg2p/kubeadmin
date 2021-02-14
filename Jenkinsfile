@@ -1,6 +1,6 @@
 node{
     stage('Scm Checkout'){
-    git credentialsId: 'git', url: 'https://github.com/githubg2p/kubeadmin'
+    git credentialsId: 'git1', url: 'https://github.com/githubg2p/kubeadmin'
 }
     stage('Mvn Package'){
     def mvnHome = tool name: 'maven', type: 'maven'
